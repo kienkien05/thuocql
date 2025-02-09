@@ -1,0 +1,32 @@
+<body>
+    <h2>Quản Lý Thuốc</h2>
+
+    <h3>Thêm Thuốc</h3>
+    <div class="add-medicine">
+        <input type="text" id="new_name" placeholder="Tên thuốc">
+        <input type="number" id="new_quantity" placeholder="Số lượng">
+        <input type="number" id="new_price" placeholder="Giá">
+        <button onclick="addMedicine()">Thêm</button>
+    </div>
+
+    <table id="medicinesTable">
+        <tr>
+            <th>ID</th>
+            <th>Tên thuốc</th>
+            <th>Số lượng</th>
+            <th>Giá</th>
+        </tr>
+        {% for medicine in medicines %}
+        <tr>
+            <td>{{ medicine.id }}</td>
+            <td><input type="text" value="{{ medicine.name }}" data-id="{{ medicine.id }}" class="name"></td>
+            <td><input type="number" value="{{ medicine.quantity }}" data-id="{{ medicine.id }}" class="quantity"></td>
+            <td><input type="number" value="{{ medicine.price }}" data-id="{{ medicine.id }}" class="price"></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <button onclick="saveMedicines()">Lưu</button>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
