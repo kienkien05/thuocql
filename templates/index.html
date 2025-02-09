@@ -8,7 +8,9 @@
         <input type="number" id="new_price" placeholder="Giá">
         <button onclick="addMedicine()">Thêm</button>
     </div>
-
+    
+    <button onclick="saveMedicines()">Lưu</button>
+    
     <table id="medicinesTable">
         <tr>
             <th>ID</th>
@@ -25,8 +27,6 @@
         </tr>
         {% endfor %}
     </table>
-
-    <button onclick="saveMedicines()">Lưu</button>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
