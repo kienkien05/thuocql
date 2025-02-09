@@ -9,7 +9,7 @@
         <button onclick="addMedicine()">Thêm</button>
     </div>
     
-    <button onclick="saveMedicines()">Lưu</button>
+    
     
     <table id="medicinesTable">
         <tr>
@@ -18,6 +18,9 @@
             <th>Số lượng</th>
             <th>Giá</th>
         </tr>
+
+        <button onclick="saveMedicines()">Lưu</button>
+        
         {% for medicine in medicines %}
         <tr>
             <td>{{ medicine.id }}</td>
